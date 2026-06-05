@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block title %}
+{{ user.title }}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-7">
+    <h1>{{ user.title }}</h1>
+    <div class="alert alert-secondary">
+        <p>{{ user.text }}</p>
+        <p><b>{{ user.date.strftime('%Y-%m-%d %H:%M:%S')}}</b></p>
+        <a class="btn btn-info" href="/posts/{{ user.id }}/del">Удаление поста</a>
+    </div>
+
+
+</div>
+
+{% endblock %}

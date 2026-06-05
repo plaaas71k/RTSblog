@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Добавление статьи{% endblock %}
+
+{% block body %}
+
+<h1 class="container">Добавление статьи</h1>
+<form class="container form-group" method="POST">
+    <input type="text" name="title" class="form-control" placeholder="Тема поста"></br>
+    <textarea type="text" name="text" class="form-control" placeholder="Текст текст текст"></textarea><br>
+    <input type="submit" value="Отправить" class="btn btn-success">
+</form>
+
+{% endblock %}

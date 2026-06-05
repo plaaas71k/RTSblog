@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% block title %}Список постов{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Список постов на сайте</h1>
+
+    {% if users_posts|length > 0%}
+
+        {%  for item in users_posts  %}
+        <div class="alert alert-secondary">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.text }}</p>
+            <p><b>{{ item.date.date() }}</b></p>
+            <a class="btn btn-info" href="/posts/{{ item.id }}">Просмотр поста</a>
+        </div>
+        {% endfor %}
+    {% else %}
+    <div class="alert alert-secondary">
+            <p class="lead">Постов на сайте еще нет</p>
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}
